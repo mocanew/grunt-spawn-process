@@ -61,21 +61,21 @@ grunt.registerTask('default', ['spawnProcess:server', 'spawnProcess:anotherServe
 
 #### options.cmd
 
-Type: `String`
-Default value: `node`
+Type: `String`  
+Default: `node`
 
 The command that will be executed.
 
 #### options.args
 
-Type: 'Array'
+Type: 'Array'  
 Default: '[]'
 
 The args that will be sent to the command
 
 #### options.spawnOptions
 
-Type: 'Object'
+Type: 'Object'  
 Default: '{}'
 
 The options for child_process.spawn. You can see the list [here](https://nodejs.org/api/child_process.html#child_process_child_process_exec_command_options_callback).
