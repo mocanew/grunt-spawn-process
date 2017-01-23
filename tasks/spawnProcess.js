@@ -27,13 +27,17 @@ module.exports = function (grunt) {
         }
         nodeProcesses[id] = spawn(cmd, args, spawnOptions);
 
-        nodeProcesses[id].stdout.on('data', function (data) {
-            process.stdout.write(data.toString());
-        });
+        if (nodeProcesses[id].stdout) {
+            nodeProcesses[id].stdout.on('data', function (data) {
+                process.stdout.write(data.toString());
+            });
+        }
 
-        nodeProcesses[id].stderr.on('data', function (data) {
-            process.stdout.write(data.toString());
-        });
+        if (nodeProcesses[id].stderr) {
+            nodeProcesses[id].stderr.on('data', function (data) {
+                process.stdout.write(data.toString());
+            });
+        }
 
         callback();
     });
